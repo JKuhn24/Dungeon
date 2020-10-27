@@ -26,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity = 10f;
     float maxSlope = 45;
 
-    int keyNum = 0;
-
     DoorDelete door;
 
     void Start()
@@ -109,45 +107,39 @@ public class PlayerMovement : MonoBehaviour
     // this buit-in method gets called whener Unity detects collision of two bodies
     void OnCollisionEnter(Collision collision)
     {
-        //foreach (ContactPoint contact in collision.contacts)
-        //{
-        //    if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)  // detecting
-        //    {
-        //        isGrounded = true;
+    //    //foreach (ContactPoint contact in collision.contacts)
+    //    //{
+    //    //    if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)  // detecting
+    //    //    {
+    //    //        isGrounded = true;
 
-        //    }
+    //    //    }
 
-            switch (collision.gameObject.tag)
+          switch (collision.gameObject.tag)
             {
-                case "Key":
-                    // do nothing, someone I like
-                    AddKey();
-                    print("Number of keys: " + keyNum);
-                    break;
-                case "Door":
-                    print("Finish");
-                if(keyNum > 0)
-                {
-                    door.deleteDoor();
-                    keyNum--;
-                }
+    //            case "Key":
+    //                // do nothing, someone I like
+    //                AddKey();
+    //                print("Number of keys: " + keyNum);
+    //                break;
+    //            case "Door":
+    //                print("Finish");
+    //            if(keyNum > 0)
+    //            {
+    //                door.deleteDoor();
+    //                keyNum--;
+    //            }
                     
-                    break;
+    //                break;
                 case "End":
-                    Invoke("LoadNextLevel", 3f);
+                    Invoke("LoadNextLevel", 1f);
                 break;
-                //default:
+    //            //default:
                     
-                //    break;
-            }
-        //}
+    //            //    break;
+           }
+    //    //}
     }
-
-    void AddKey()
-    {
-        ++keyNum;
-    }
-
     private void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DoorDelete.cs" />
     <Compile Include="Assets\Scripts\KeyCollision.cs" />
+    <Compile Include="Assets\Scripts\KeyThings.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="UnityEngine">
