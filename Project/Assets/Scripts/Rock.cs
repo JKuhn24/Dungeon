@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyCollision : MonoBehaviour
+public class Rock : MonoBehaviour
 {
-    KeyThings key;
-
     // Start is called before the first frame update
     void Start()
     {
-        key = FindObjectOfType<KeyThings>();
         
     }
 
@@ -21,8 +18,13 @@ public class KeyCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        key.AddKey();
-        Destroy(gameObject);
-        print("Hit");
+        switch (collision.gameObject.tag)
+        {
+            case "Player":
+                Destroy(gameObject);
+
+
+                break;
+        }
     }
 }

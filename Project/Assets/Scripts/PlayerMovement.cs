@@ -26,11 +26,15 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity = 10f;
     float maxSlope = 45;
 
+    int health = 100;
+
     DoorDelete door;
+    HealthText HP;
 
     void Start()
     {
         door = FindObjectOfType<DoorDelete>();
+        HP = FindObjectOfType<HealthText>();
     }
 
     private void Awake()
@@ -134,6 +138,9 @@ public class PlayerMovement : MonoBehaviour
                 case "End":
                     Invoke("LoadNextLevel", 1f);
                 break;
+            case "Danger":
+                PlayerDamage();
+                break;
     //            //default:
                     
     //            //    break;
@@ -149,5 +156,17 @@ public class PlayerMovement : MonoBehaviour
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    private void PlayerDamage()
+    {
+        health -= 25;
+        HP.HPNum(health);
+        if (health == 0)
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+        print("Player health is: " + health);
     }
 }

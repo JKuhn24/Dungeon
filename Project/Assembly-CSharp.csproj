@@ -64,10 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DoorDelete.cs" />
+    <Compile Include="Assets\Scripts\FireArrow.cs" />
+    <Compile Include="Assets\Scripts\HealthText.cs" />
     <Compile Include="Assets\Scripts\KeyCollision.cs" />
+    <Compile Include="Assets\Scripts\KeyText.cs" />
     <Compile Include="Assets\Scripts\KeyThings.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Rock.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
